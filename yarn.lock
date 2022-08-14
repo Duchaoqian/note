@@ -153,6 +153,11 @@
     "@docsearch/css" "3.2.0"
     "algoliasearch" "^4.0.0"
 
+"@types/node@^18.7.3":
+  "integrity" "sha512-LJgzOEwWuMTBxHzgBR/fhhBOWrvBjvO+zPteUgbbuQi80rYIZHrk1mNbRUqPZqSLP2H7Rwt1EFLL/tNLD1Xx/w=="
+  "resolved" "https://registry.npmmirror.com/@types/node/-/node-18.7.3.tgz"
+  "version" "18.7.3"
+
 "@types/web-bluetooth@^0.0.14":
   "integrity" "sha512-5d2RhCard1nQUC3aHcq/gHzWYO6K0WJmAbjO7mQJgCQKtZpgXxv1rOM6O/dBDhDYYVutk1sciOgNSe+5YyfM8A=="
   "resolved" "https://registry.npmmirror.com/@types/web-bluetooth/-/web-bluetooth-0.0.14.tgz"
@@ -227,6 +232,11 @@
   "version" "3.2.37"
   dependencies:
     "@vue/shared" "3.2.37"
+
+"@vue/repl@^1.3.0":
+  "integrity" "sha512-L2Jr9+M6z2+gW6i5ZuUXwCMfXtyHDSSyw4fViL0QezXLLOctqTw+o6sYUsgvErkreb9oI0kcZPpWkkW7lGeuiA=="
+  "resolved" "https://registry.npmmirror.com/@vue/repl/-/repl-1.3.0.tgz"
+  "version" "1.3.0"
 
 "@vue/runtime-core@3.2.37":
   "integrity" "sha512-JPcd9kFyEdXLl/i0ClS7lwgcs0QpUAWj+SKX2ZC3ANKi1U4DOtiEr6cRqFXsPwY5u1L9fAjkinIdB8Rz3FoYNQ=="
@@ -545,7 +555,7 @@
   "resolved" "https://registry.npmmirror.com/vue-demi/-/vue-demi-0.13.7.tgz"
   "version" "0.13.7"
 
-"vue@^2.6.0 || ^3.2.0", "vue@^3.0.0-0 || ^2.6.0", "vue@^3.2.25", "vue@^3.2.33", "vue@^3.2.37", "vue@3.2.37":
+"vue@^2.6.0 || ^3.2.0", "vue@^3.0.0-0 || ^2.6.0", "vue@^3.2.13", "vue@^3.2.25", "vue@^3.2.33", "vue@^3.2.37", "vue@3.2.37":
   "integrity" "sha512-bOKEZxrm8Eh+fveCqS1/NkG/n6aMidsI6hahas7pa0w/l7jkbssJVsRhVDs07IdDq7h9KHswZOgItnwJAgtVtQ=="
   "resolved" "https://registry.npmmirror.com/vue/-/vue-3.2.37.tgz"
   "version" "3.2.37"
