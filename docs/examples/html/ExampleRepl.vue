@@ -2,25 +2,13 @@
 import { Repl, ReplStore } from '@vue/repl'
 import '@vue/repl/style.css'
 import { data } from './examples.data'
-import { inject, watchEffect, version, Ref, ref } from 'vue'
-import { resolveSFCExample, resolveNoBuildExample, onHashChange } from './utils'
+import { watchEffect } from 'vue'
+import { resolveSFCExample, onHashChange } from './utils'
 
-const store = new ReplStore({
-  // defaultVueRuntimeURL: `https://unpkg.com/vue@${version}/dist/vue.esm-browser.js`
-})
-
-// const preferComposition = (inject('prefer-composition') as Ref<boolean>) || ref()
-// const preferSFC = (inject('prefer-sfc') as Ref<boolean>) || ref()
+const store = new ReplStore()
 
 watchEffect(updateExample)
 onHashChange(updateExample)
-
-/**
- * We perform some runtime logic to transform source files into different
- * API / format combinations:
- * - Options vs. Composition
- * - plain HTML vs. SFCs
- */
 
 function updateExample() {
   let hash = location.hash.slice(1)
@@ -34,12 +22,7 @@ function updateExample() {
 </script>
 
 <template>
-  <Repl
-    :store="store"
-    :showImportMap="!preferSFC"
-    :showCompileOutput="false"
-    :clearConsole="false"
-  />
+  <Repl :store="store" :showImportMap="false" :showCompileOutput="false" :clearConsole="false" />
 </template>
 
 <style scoped>
