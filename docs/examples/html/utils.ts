@@ -10,7 +10,7 @@ export type ExampleData = {
 function forEachComponent(
   raw: ExampleData,
   files: Record<string, string>,
-  cb: (file: Record<string, string>) => void
+  cb: (file: any) => void
 ) {
   const { 'index.html': template, 'script.js': script, 'style.css': style } = raw
   for (const filename in raw) {
@@ -26,21 +26,17 @@ export function resolveSFCExample(raw: ExampleData, preferComposition: boolean) 
     const desc = raw['description.txt'] as string
     let sfcContent = desc ? `<!--\n${desc.trim()}\n-->\n\n` : ``
 
-    sfcContent += `
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>\n${style || ''}</style>
-</head>
-<body>
-  ${template}
-</body>
-<script>\n\t${script}<\/script>\n\n
-</html>`
+    if (style)
+      template = template.replace(
+        /<link(.*?)href=("|')(.*?)style.css("|')(.*?)>/g,
+        `<style>\n\n\t${style}\n\n</style>`
+      )
+    if (script)
+      template = template.replace(
+        /<script(.*?)src=("|')\.\/script.js("|')(.*?)>(.*?)<\/script>/g,
+        `<script>\n\n\t${script}\n\n</script>`
+      )
+    sfcContent += template
     files['index' + '.html'] = sfcContent
     console.log(files)
   })
@@ -64,19 +60,12 @@ export function resolveNoBuildExample(raw: ExampleData, preferComposition: boole
     console.log(template)
 
     if (template)
-      html += `<!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Document</title>
-    </head>
-    <body>
-    ${template}
-    </body>
-    <script src='./script.js'><\/script>\n\n
-    </html>`
+      html += template.replace(
+        /<script(.*?)src=("|')\.\/script.js("|')(.*?)>(.*?)<\/script>/g,
+        `\n\t\t<script type="module" >
+      import "./script.js"
+    </script>`
+      )
     if (script) js += script
   })
   files['index.html'] = html

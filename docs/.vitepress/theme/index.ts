@@ -1,7 +1,7 @@
 import { h, App } from 'vue'
 import theme from './theme-layout/theme'
 import PreferenceSwitch from './components/PreferenceSwitch.vue'
-import { preferComposition, preferSFC, filterHeadersByPreference } from './components/preferences'
+import { preferComposition, preferSFC, filterHeadersByPreference,preferHtml } from './components/preferences'
 
 import SponsorsAside from './components/SponsorsAside.vue'
 // import VueJobs from './components/VueJobs.vue'
@@ -20,6 +20,7 @@ export default Object.assign({}, theme, {
   enhanceApp({ app }: { app: App }) {
     app.provide('prefer-composition', preferComposition)
     app.provide('prefer-sfc', preferSFC)
+    app.provide('prefer-html', preferHtml)
     app.provide('filter-headers', filterHeadersByPreference)
     app.component('VueSchoolLink', VueSchoolLink)
   }

@@ -11,7 +11,9 @@ export const preferCompositionKey = 'vue-docs-prefer-composition'
 export const preferComposition = ref(get(preferCompositionKey))
 
 export const preferSFCKey = 'vue-docs-prefer-sfc'
+export const preferHtmlKey = 'html-prefer-sfc'
 export const preferSFC = ref(get(preferSFCKey, true))
+export const preferHtml = ref(get(preferHtmlKey, true))
 
 export function filterHeadersByPreference(h: Header) {
   return preferComposition.value ? !h.optionsOnly : !h.compositionOnly

@@ -1,1 +1,1 @@
-document.body.append("789")
+document.body.append(456)

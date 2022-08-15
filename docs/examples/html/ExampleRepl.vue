@@ -2,27 +2,40 @@
 import { Repl, ReplStore } from '@vue/repl'
 import '@vue/repl/style.css'
 import { data } from './examples.data'
-import { watchEffect } from 'vue'
-import { resolveSFCExample, onHashChange } from './utils'
+import { inject, watchEffect, ref, Ref } from 'vue'
+import { resolveSFCExample, onHashChange, resolveNoBuildExample } from './utils'
 
-const store = new ReplStore()
+let preferHtml = (inject('prefer-html') as Ref<boolean>) || ref()
+
+const store = new ReplStore({
+  serializedState: '',
+  defaultVueRuntimeURL: ``,
+  defaultVueServerRendererURL: ``,
+  showOutput: false,
+  outputMode: '预览'
+})
 
 watchEffect(updateExample)
 onHashChange(updateExample)
-
 function updateExample() {
   let hash = location.hash.slice(1)
   if (!data.hasOwnProperty(hash)) {
     hash = 'demo'
     location.hash = `#${hash}`
   }
-  store.setFiles(resolveSFCExample(data[hash], false), 'index.html')
-  console.log(resolveSFCExample(data[hash], false))
+  console.log(preferHtml.value)
+
+  store.setFiles(
+    preferHtml.value
+      ? resolveSFCExample(data[hash], false)
+      : resolveNoBuildExample(data[hash], false),
+    'index.html'
+  )
 }
 </script>
 
 <template>
-  <Repl :store="store" :showImportMap="false" :showCompileOutput="false" :clearConsole="false" />
+  <Repl :store="store" showImportMap :showCompileOutput="false" :clearConsole="false" />
 </template>
 
 <style scoped>

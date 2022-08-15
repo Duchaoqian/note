@@ -2,13 +2,20 @@
 import { VTSwitch, VTIconChevronDown } from '@vue/theme'
 import { useRoute } from 'vitepress'
 import { inject, Ref, computed, ref } from 'vue'
-import { preferCompositionKey, preferComposition, preferSFCKey, preferSFC } from './preferences'
+import {
+  preferCompositionKey,
+  preferComposition,
+  preferSFCKey,
+  preferSFC,
+  preferHtmlKey,
+  preferHtml
+} from './preferences'
 
 const route = useRoute()
 console.log(route.path)
 
 const show = computed(() => {
-  return /^\/(examples\/vue)\//.test(route.path)
+  return /^\/(examples\/(vue|html))\//.test(route.path)
 })
 const showSFC = computed(() => !/^\/guide/.test(route.path))
 
@@ -32,6 +39,7 @@ const toggleCompositionAPI = useToggleFn(
   'prefer-composition'
 )
 const toggleSFC = useToggleFn(preferSFCKey, preferSFC, 'prefer-sfc')
+const toggleSingle = useToggleFn(preferHtmlKey, preferHtml, 'prefer-sfc')
 const closeSideBar = inject('close-sidebar') as () => void
 
 function useToggleFn(storageKey: string, state: Ref<boolean>, className: string) {
@@ -51,7 +59,7 @@ function useToggleFn(storageKey: string, state: Ref<boolean>, className: string)
 </script>
 
 <template>
-  <div v-if="show" class="preference-switch">
+  <div v-if="/^\/(examples\/vue)\//.test(route.path)" class="preference-switch">
     <button
       class="toggle"
       aria-label="偏好切换开关"
@@ -94,6 +102,39 @@ function useToggleFn(storageKey: string, state: Ref<boolean>, className: string)
         <a
           class="switch-link"
           title="关于单文件组件"
+          href="/guide/scaling-up/sfc.html"
+          @click="closeSideBar"
+          >?</a
+        >
+      </div>
+    </div>
+  </div>
+  <div v-else-if="/^\/(examples\/html)\//.test(route.path)" class="preference-switch">
+    <button
+      class="toggle"
+      aria-label="偏好切换开关"
+      aria-controls="preference-switches"
+      :aria-expanded="isOpen"
+      @click="toggleOpen"
+      @mousedown="removeOutline"
+      @blur="restoreOutline"
+    >
+      <span>API 风格偏好</span>
+      <VTIconChevronDown class="vt-link-icon" :class="{ open: isOpen }" />
+    </button>
+    <div id="preference-switches" :hidden="!isOpen" :aria-hidden="!isOpen">
+      <div class="switch-container">
+        <label class="no-sfc-label" @click="toggleSingle(false)">多文件</label>
+        <VTSwitch
+          class="sfc-switch"
+          aria-label="关于多文件"
+          :aria-checked="preferHtml"
+          @click="toggleSingle()"
+        />
+        <label class="sfc-label" @click="toggleSingle(true)">单文件</label>
+        <a
+          class="switch-link"
+          title="关于单文件"
           href="/guide/scaling-up/sfc.html"
           @click="closeSideBar"
           >?</a
