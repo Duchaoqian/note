@@ -1,4 +1,4 @@
-import { valueToPoint } from './util.js'
+import { valueToPoint } from './util.js.js'
 
 export default {
   props: {

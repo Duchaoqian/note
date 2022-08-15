@@ -24,10 +24,6 @@ onHashChange(updateExample)
 
 function updateExample() {
   let hash = location.hash.slice(1)
-  console.log(
-    resolveSFCExample(data[hash], preferComposition.value),
-    resolveNoBuildExample(data[hash], preferComposition.value)
-  )
   if (!data.hasOwnProperty(hash)) {
     hash = 'hello-world'
     location.hash = `#${hash}`
@@ -55,7 +51,7 @@ function updateExample() {
   max-width: 1105px;
   width: 100%;
   border-right: 1px solid var(--vt-c-divider-light);
-  height: calc(100vh - var(--vt-nav-height) - var(--vt-banner-height, 0px)- 48px);
+  height: calc(100vh - var(--vt-nav-height) - var(--vt-banner-height, 0px) - 20px);
 }
 
 @media (max-width: 960px) {

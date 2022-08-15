@@ -25,7 +25,19 @@ export default defineConfigWithTheme<ThemeConfig>({
           }
         ]
       },
-      { text: '示例', link: '/examples/' }
+      {
+        text: '示例',
+        items: [
+          {
+            text: 'vue',
+            link: '/examples/vue/'
+          },
+          {
+            text: 'html',
+            link: '/examples/html/'
+          }
+        ]
+      }
     ],
     socialLinks: [
       { icon: 'github', link: 'https://github.com' },
@@ -55,33 +67,39 @@ export default defineConfigWithTheme<ThemeConfig>({
           items: [{ text: 'mock', link: '/note/实用工具/mock' }]
         }
       ],
-      '/examples/': [
+      '/examples/html/': [
+        {
+          text: 'hello word',
+          link: '/examples/html/#demo'
+        }
+      ],
+      '/examples/vue/': [
         {
           text: '基础',
           items: [
             {
               text: '你好，世界',
-              link: '/examples/#hello-world'
+              link: '/examples/vue/#hello-world'
             },
             {
               text: '处理用户输入',
-              link: '/examples/#handling-input'
+              link: '/examples/vue/#handling-input'
             },
             {
               text: 'Attribute 绑定',
-              link: '/examples/#attribute-bindings'
+              link: '/examples/vue/#attribute-bindings'
             },
             {
               text: '条件与循环',
-              link: '/examples/#conditionals-and-loops'
+              link: '/examples/vue/#conditionals-and-loops'
             },
             {
               text: '表单绑定',
-              link: '/examples/#form-bindings'
+              link: '/examples/vue/#form-bindings'
             },
             {
               text: '简单组件',
-              link: '/examples/#simple-component'
+              link: '/examples/vue/#simple-component'
             }
           ]
         },
@@ -90,35 +108,35 @@ export default defineConfigWithTheme<ThemeConfig>({
           items: [
             {
               text: 'Markdown 编辑器',
-              link: '/examples/#markdown'
+              link: '/examples/vue/#markdown'
             },
             {
               text: '获取数据',
-              link: '/examples/#fetching-data'
+              link: '/examples/vue/#fetching-data'
             },
             {
               text: '带有排序和过滤器的网格',
-              link: '/examples/#grid'
+              link: '/examples/vue/#grid'
             },
             {
               text: '树状视图',
-              link: '/examples/#tree'
+              link: '/examples/vue/#tree'
             },
             {
               text: 'SVG 图像',
-              link: '/examples/#svg'
+              link: '/examples/vue/#svg'
             },
             {
               text: '带过渡动效的模态框',
-              link: '/examples/#modal'
+              link: '/examples/vue/#modal'
             },
             {
               text: '带过渡动效的列表',
-              link: '/examples/#list-transition'
+              link: '/examples/vue/#list-transition'
             },
             {
               text: 'TodoMVC',
-              link: '/examples/#todomvc'
+              link: '/examples/vue/#todomvc'
             }
           ]
         },
@@ -128,31 +146,31 @@ export default defineConfigWithTheme<ThemeConfig>({
           items: [
             {
               text: '计数器',
-              link: '/examples/#counter'
+              link: '/examples/vue/#counter'
             },
             {
               text: '温度转换器',
-              link: '/examples/#temperature-converter'
+              link: '/examples/vue/#temperature-converter'
             },
             {
               text: '机票预订',
-              link: '/examples/#flight-booker'
+              link: '/examples/vue/#flight-booker'
             },
             {
               text: '计时器',
-              link: '/examples/#timer'
+              link: '/examples/vue/#timer'
             },
             {
               text: 'CRUD',
-              link: '/examples/#crud'
+              link: '/examples/vue/#crud'
             },
             {
               text: '画圆',
-              link: '/examples/#circle-drawer'
+              link: '/examples/vue/#circle-drawer'
             },
             {
               text: '单元格',
-              link: '/examples/#cells'
+              link: '/examples/vue/#cells'
             }
           ]
         }

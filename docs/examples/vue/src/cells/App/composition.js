@@ -1,5 +1,5 @@
 import Cell from './Cell.vue'
-import { cells } from './store.js'
+import { cells } from './store.js.js'
 
 export default {
   components: {

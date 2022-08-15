@@ -8,7 +8,7 @@ const route = useRoute()
 console.log(route.path)
 
 const show = computed(() => {
-  return /^\/(guide|tutorial|examples)\//.test(route.path)
+  return /^\/(examples\/vue)\//.test(route.path)
 })
 const showSFC = computed(() => !/^\/guide/.test(route.path))
 

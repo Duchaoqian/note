@@ -12,9 +12,8 @@ export default Object.assign({}, theme, {
   Layout: () => {
     return h(theme.Layout, null, {
       // banner: () => h(Banner),
-      // 'sidebar-top': () => h('div', {}, '123'),
       'sidebar-top': () => h(PreferenceSwitch),
-      'slide-top': () => h(SponsorsAside),
+      'aside-outline-after': () => h(WwAds),
       'aside-bottom': () => h(WwAds)
     })
   },
