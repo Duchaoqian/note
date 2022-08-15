@@ -8,13 +8,13 @@ layout: page
 
 <script>
 import { defineAsyncComponent } from 'vue'
-// import ReplLoading from '../.vitepress/theme/components/ReplLoading.vue'
+import ReplLoading from '../.vitepress/theme/components/ReplLoading.vue'
 
 export default {
   components: {
     ExampleRepl: defineAsyncComponent({
       loader: () => import('./ExampleRepl.vue'),
-      // loadingComponent: ReplLoading
+      loadingComponent: ReplLoading
     })
   }
 }

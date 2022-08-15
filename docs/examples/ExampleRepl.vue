@@ -24,8 +24,10 @@ onHashChange(updateExample)
 
 function updateExample() {
   let hash = location.hash.slice(1)
-  console.log(resolveSFCExample(data[hash], preferComposition.value), resolveNoBuildExample(data[hash], preferComposition.value))
-
+  console.log(
+    resolveSFCExample(data[hash], preferComposition.value),
+    resolveNoBuildExample(data[hash], preferComposition.value)
+  )
   if (!data.hasOwnProperty(hash)) {
     hash = 'hello-world'
     location.hash = `#${hash}`
