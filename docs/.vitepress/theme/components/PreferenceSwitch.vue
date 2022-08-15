@@ -12,7 +12,6 @@ import {
 } from './preferences'
 
 const route = useRoute()
-console.log(route.path)
 
 const show = computed(() => {
   return /^\/(examples\/(vue|html))\//.test(route.path)
@@ -22,7 +21,7 @@ const showSFC = computed(() => !/^\/guide/.test(route.path))
 let isOpen = ref(true)
 
 const toggleOpen = () => {
-  isOpen = !isOpen
+  isOpen.value = !isOpen.value
 }
 
 const removeOutline = (e: Event) => {
@@ -98,7 +97,7 @@ function useToggleFn(storageKey: string, state: Ref<boolean>, className: string)
           :aria-checked="preferSFC"
           @click="toggleSFC()"
         />
-        <label class="sfc-label" @click="toggleSFC(true)">单文件组件</label>
+        <label class="sfc-label" @click="toggleSFC(true)">单文件</label>
         <a
           class="switch-link"
           title="关于单文件组件"
@@ -193,7 +192,9 @@ function useToggleFn(storageKey: string, state: Ref<boolean>, className: string)
   border-radius: 8px;
   font-weight: 600;
 }
-
+#preference-switches[hidden] {
+  display: none;
+}
 .switch-container {
   display: flex;
   align-items: center;

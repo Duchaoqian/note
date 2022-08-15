@@ -12,7 +12,7 @@ const store = new ReplStore({
   defaultVueRuntimeURL: ``,
   defaultVueServerRendererURL: ``,
   showOutput: false,
-  outputMode: '预览'
+  outputMode: 'preview'
 })
 
 watchEffect(updateExample)
@@ -35,7 +35,7 @@ function updateExample() {
 </script>
 
 <template>
-  <Repl :store="store" showImportMap :showCompileOutput="false" :clearConsole="false" />
+  <Repl :store="store" :showImportMap="false" :showCompileOutput="false" :clearConsole="false" />
 </template>
 
 <style scoped>
