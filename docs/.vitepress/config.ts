@@ -7,6 +7,7 @@ export default defineConfigWithTheme<ThemeConfig>({
   title: '前端笔记',
   description: 'Just playing around.',
   head: [['link', { rel: 'icon', href: 'http://localhost:3000/favicon.ico' }]],
+  base: '/web-note/',
   themeConfig: {
     // 导航栏
     lastUpdated: true,
