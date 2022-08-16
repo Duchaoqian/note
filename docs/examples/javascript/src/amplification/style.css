@@ -1,0 +1,37 @@
+*{
+  margin:0;
+  padding:0;
+}
+#view{
+  width:480px;
+  position: relative;
+  margin:1000px auto;
+}
+#middle{
+  width: 480px;
+  display: block;
+  cursor: crosshair;
+}
+#small{
+  font-size:0;
+  margin-top:2px;
+}
+#small img{
+  width: 116px;
+  margin:2px;
+  opacity:0.6;
+  transition:all .5s
+}
+#big{
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left:480px;
+  top:0;
+  overflow: hidden;
+  display: none
+}
+#big img{
+  width: 960px;
+  position: absolute;
+}

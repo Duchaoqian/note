@@ -20,7 +20,7 @@ onHashChange(updateExample)
 function updateExample() {
   let hash = location.hash.slice(1)
   if (!data.hasOwnProperty(hash)) {
-    hash = 'helloword'
+    hash = 'banner'
     location.hash = `#${hash}`
   }
 

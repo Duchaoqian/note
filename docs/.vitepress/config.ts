@@ -5,9 +5,8 @@ import baseConfig from '@vue/theme/config'
 export default defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig,
   title: '前端笔记',
-  description: 'Just playing around.',
-  head: [['link', { rel: 'icon', href: 'http://localhost:3000/favicon.ico' }]],
-  base: '/web-note/',
+  description: '前端学习笔记，可见案例，知识点总结',
+  // base: './',
   themeConfig: {
     // 导航栏
     lastUpdated: true,
@@ -32,6 +31,10 @@ export default defineConfigWithTheme<ThemeConfig>({
           {
             text: 'html',
             link: '/examples/html/'
+          },
+          {
+            text: 'javascript',
+            link: '/examples/javascript/'
           },
           {
             text: 'vue',
@@ -74,11 +77,31 @@ export default defineConfigWithTheme<ThemeConfig>({
           items: [
             {
               text: 'hello word',
-              link: '/examples/html/#demo'
-            },
+              link: '/examples/html/#helloword'
+            }
+          ]
+        }
+      ],
+      '/examples/javascript/': [
+        {
+          text: 'javascript 案例',
+          items: [
             {
               text: '轮播图',
-              link: '/examples/html/#banner'
+              link: '/examples/javascript/#banner'
+            },
+            {
+              text: '放大镜',
+              link: '/examples/javascript/#amplification'
+            }
+          ]
+        },
+        {
+          text: 'canvas 案例',
+          items: [
+            {
+              text: 'canvas 动画特效',
+              link: '/examples/javascript/#canvas-ani'
             }
           ]
         }
@@ -189,7 +212,7 @@ export default defineConfigWithTheme<ThemeConfig>({
 
     footer: {
       message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2019-present YES I DU'
+      copyright: 'Copyright © 2019-present Mr. Du'
     }
   }
 })

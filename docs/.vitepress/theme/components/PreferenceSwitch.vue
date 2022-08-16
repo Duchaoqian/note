@@ -108,7 +108,10 @@ function useToggleFn(storageKey: string, state: Ref<boolean>, className: string)
       </div>
     </div>
   </div>
-  <div v-else-if="/^\/(examples\/html)\//.test(route.path)" class="preference-switch">
+  <div
+    v-else-if="/^\/(examples\/(html|javascript|css|jquery))\//.test(route.path)"
+    class="preference-switch"
+  >
     <button
       class="toggle"
       aria-label="偏好切换开关"
