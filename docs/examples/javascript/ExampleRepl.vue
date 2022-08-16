@@ -15,9 +15,6 @@ const store = new ReplStore({
   outputMode: 'preview'
 })
 
-store.options = {}
-console.log(store)
-
 watchEffect(updateExample)
 onHashChange(updateExample)
 function updateExample() {

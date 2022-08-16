@@ -43,6 +43,7 @@ function forEachComponent(
 
 export function resolveSFCExample(raw: ExampleData, preferComposition: boolean) {
   const files: Record<string, string> = {}
+  raw['import-map.json'] = raw['import-map.json'] ? raw['import-map.json'] : ''
   forEachComponent(raw, files, ({ template, script, style }) => {
     const desc = raw['description.txt'] as string
     let sfcContent = desc ? `<!--\n${desc.trim()}\n-->\n\n` : ``
@@ -66,6 +67,7 @@ export function resolveSFCExample(raw: ExampleData, preferComposition: boolean) 
 
 export function resolveNoBuildExample(raw: ExampleData, preferComposition: boolean) {
   const files: Record<string, string> = {}
+  raw['import-map.json'] = raw['import-map.json'] ? raw['import-map.json'] : ''
 
   const desc = raw['description.txt'] as string
   let html = desc ? `<!--\n${desc.trim()}\n-->\n\n` : ``

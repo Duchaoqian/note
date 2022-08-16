@@ -2,7 +2,7 @@
 import { Repl, ReplStore } from '@vue/repl'
 import '@vue/repl/style.css'
 import { data } from './examples.data'
-import { inject, watchEffect, ref, Ref } from 'vue'
+import { inject, watchEffect, ref, Ref, watch } from 'vue'
 import { resolveSFCExample, onHashChange, resolveNoBuildExample } from './utils'
 
 let preferHtml = (inject('prefer-html') as Ref<boolean>) || ref()
@@ -15,8 +15,11 @@ const store = new ReplStore({
   outputMode: 'preview'
 })
 
-store.options = {}
-console.log(store)
+store.setImportMap({
+  imports: {
+    jquery: 'https://unpkg.com/jquery@3.6.0/dist/jquery.min.js'
+  }
+})
 
 watchEffect(updateExample)
 onHashChange(updateExample)
@@ -26,7 +29,6 @@ function updateExample() {
     hash = 'helloword'
     location.hash = `#${hash}`
   }
-
   store.setFiles(
     preferHtml.value
       ? resolveSFCExample(data[hash], false)
@@ -37,7 +39,7 @@ function updateExample() {
 </script>
 
 <template>
-  <Repl :store="store" :showImportMap="false" :showCompileOutput="false" :clearConsole="false" />
+  <Repl :store="store" :showImportMap="true" :showCompileOutput="false" :clearConsole="false" />
 </template>
 
 <style scoped>

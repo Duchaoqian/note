@@ -5,12 +5,12 @@ import baseConfig from '@vue/theme/config'
 export default defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig,
   title: '前端笔记',
-  description: '前端学习笔记，可见案例，知识点总结',
+  description: '前端学习笔记，课件案例，知识点总结',
   // base: './',
   themeConfig: {
     // 导航栏
     lastUpdated: true,
-    logo: 'https://api.jszhan.top//userIcon/cac42855e4b950b96841fd5d9b453651',
+    logo: '/logo.jpeg',
     head: [['link', { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]],
     nav: [
       {
@@ -49,10 +49,10 @@ export default defineConfigWithTheme<ThemeConfig>({
       }
     ],
     socialLinks: [
-      { icon: 'github', link: 'https://github.com' },
+      { icon: 'github', link: 'https://github.com/Duchaoqian' },
       {
         icon: 'gitee',
-        link: 'https://gitee.com'
+        link: 'https://gitee.com/du8023'
       }
     ],
 
@@ -81,8 +81,8 @@ export default defineConfigWithTheme<ThemeConfig>({
           text: 'html案例',
           items: [
             {
-              text: 'hello word',
-              link: '/examples/html/#helloword'
+              text: 'hello world',
+              link: '/examples/html/#helloworld'
             }
           ]
         }
@@ -120,8 +120,8 @@ export default defineConfigWithTheme<ThemeConfig>({
           text: 'jquery案例',
           items: [
             {
-              text: 'hello word',
-              link: '/examples/jquery/#helloword'
+              text: 'hello world',
+              link: '/examples/jquery/#helloworld'
             }
           ]
         }
