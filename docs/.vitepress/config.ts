@@ -11,6 +11,7 @@ export default defineConfigWithTheme<ThemeConfig>({
     // 导航栏
     lastUpdated: true,
     logo: 'https://api.jszhan.top//userIcon/cac42855e4b950b96841fd5d9b453651',
+    head: [['link', { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]],
     nav: [
       {
         text: '笔记',
@@ -37,6 +38,10 @@ export default defineConfigWithTheme<ThemeConfig>({
             link: '/examples/javascript/'
           },
           {
+            text: 'jquery',
+            link: '/examples/jquery/'
+          },
+          {
             text: 'vue',
             link: '/examples/vue/'
           }
@@ -52,8 +57,8 @@ export default defineConfigWithTheme<ThemeConfig>({
     ],
 
     algolia: {
-      appId: '8J64VVRP8K',
-      apiKey: 'a18e2f4cc5665f6602c5631fd868adfd',
+      appId: 'HRI7JWTSQZ',
+      apiKey: 'b24c28c122b3fe4be9f25e643cc9639b',
       indexName: 'vitepress'
     },
 
@@ -93,6 +98,10 @@ export default defineConfigWithTheme<ThemeConfig>({
             {
               text: '放大镜',
               link: '/examples/javascript/#amplification'
+            },
+            {
+              text: '楼层滚动',
+              link: '/examples/javascript/#floor-scroll'
             }
           ]
         },
@@ -102,6 +111,17 @@ export default defineConfigWithTheme<ThemeConfig>({
             {
               text: 'canvas 动画特效',
               link: '/examples/javascript/#canvas-ani'
+            }
+          ]
+        }
+      ],
+      '/examples/jquery/': [
+        {
+          text: 'jquery案例',
+          items: [
+            {
+              text: 'hello word',
+              link: '/examples/jquery/#helloword'
             }
           ]
         }

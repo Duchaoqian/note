@@ -1,0 +1,5 @@
+{
+  "imports": {
+    "jquery": "https://unpkg.com/jquery@3.6.0/dist/jquery.min.js"
+  }
+}

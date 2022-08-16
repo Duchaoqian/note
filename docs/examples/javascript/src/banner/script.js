@@ -36,19 +36,6 @@ var div2 = document.getElementById('div2')
 for (var j = 0; j < arr.length; j++) {
   div2.innerHTML += "<div class='point' id='point" + j + "'></div>"
   var point2 = document.getElementsByClassName('point')
-  // for (var a = 0; a < arr.length; a++) {
-  //     point2[a].onclick = function () {
-  //         img.src = "./img/" + arr[a];
-  //         // point2[j].style.background = "blue";
-  //         for (var i = 0; i < arr.length; i++) {
-  //             if (i == a) {
-  //                 point[a].style.background = "blue";
-  //             } else {
-  //                 point[i].style.background = "darkgray";
-  //             }
-  //         }
-  //     }
-  // }
 }
 var point = document.getElementsByClassName('point')
 point[0].style.background = 'blue'
