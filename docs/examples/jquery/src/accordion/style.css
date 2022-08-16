@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+  visibility: hidden;
+}
+
+.item {
+  width: 50px;
+  float: left;
+  height: 250px;
+  overflow: hidden;
+  background: goldenrod;
+  /* transition: all .5s; */
+  position: relative;
+}
+
+.title {
+  width: 50px;
+  height: 250px;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center 90px;
+  font-size: 12px;
+  color: white;
+  font-weight: bolder;
+  text-align: center;
+  line-height: 150px;
+}
+
+.concent {
+  background-size: 80% auto;
+  background-position: center;
+  width: 250px;
+  height: 250px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: absolute;
+  top: 0;
+  left: 50px;
+}

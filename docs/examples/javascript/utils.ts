@@ -57,7 +57,7 @@ export function resolveSFCExample(raw: ExampleData, preferComposition: boolean) 
     if (script)
       template = template.replace(
         /<script(.*?)src=("|')\.\/script.js("|')(.*?)>(.*?)<\/script>/g,
-        `<script>\n\n\t${script}\n\n</script>`
+        `<script type='module'>\n\n\t${script}\n\n</script>`
       )
     sfcContent += template
     files['index' + '.html'] = sfcContent

@@ -1,0 +1,50 @@
+body {
+  background-color: #000;
+  height: 100vh;
+  margin: 0;
+}
+
+.slipper {
+  width: 200px;
+  height: 10px;
+  border: 1px solid red;
+  position: fixed;
+  bottom: 50px;
+  left: 0;
+  border-radius: 8px;
+}
+
+.ballAni {
+  animation: ballMove 1.1s linear;
+}
+
+@keyframes ballMove {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.6);
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+}
+
+.slipperAni {
+  animation: slipperMove 0.5s;
+}
+
+@keyframes slipperMove {
+  0% {
+    /* box-shadow 没有写颜色就继承字体的颜色 */
+    box-shadow: 0 0 0 20px;
+  }
+
+  100% {
+    box-shadow: 0 0 0 0;
+  }
+}

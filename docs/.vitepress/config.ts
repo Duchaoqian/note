@@ -102,6 +102,22 @@ export default defineConfigWithTheme<ThemeConfig>({
             {
               text: '楼层滚动',
               link: '/examples/javascript/#floor-scroll'
+            },
+            {
+              text: '星级评分',
+              link: '/examples/javascript/#start-score'
+            },
+            {
+              text: '秒表',
+              link: '/examples/javascript/#stopwatch'
+            },
+            {
+              text: '城市三级联动',
+              link: '/examples/javascript/#city-three-linkage'
+            },
+            {
+              text: '城市四级联动',
+              link: '/examples/javascript/#city-four-linkage'
             }
           ]
         },
@@ -111,6 +127,10 @@ export default defineConfigWithTheme<ThemeConfig>({
             {
               text: 'canvas 动画特效',
               link: '/examples/javascript/#canvas-ani'
+            },
+            {
+              text: 'canvas 连线动画',
+              link: '/examples/javascript/#canvas-line'
             }
           ]
         }
@@ -122,6 +142,14 @@ export default defineConfigWithTheme<ThemeConfig>({
             {
               text: 'hello world',
               link: '/examples/jquery/#helloworld'
+            },
+            {
+              text: '手风琴',
+              link: '/examples/jquery/#accordion'
+            },
+            {
+              text: '小球碰撞',
+              link: '/examples/jquery/#ball-collision'
             }
           ]
         }

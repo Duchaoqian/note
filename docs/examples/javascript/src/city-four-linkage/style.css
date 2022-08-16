@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+}
+header {
+  height: 30px;
+  background-color: #efefef;
+  line-height: 30px;
+  padding: 100;
+}
+.center {
+  width: 1200px;
+  margin: 0 auto;
+}
+.center > b {
+  color: red;
+  margin-right: 10px;
+}
+main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: none;
+}
+.mask {
+  width: 800px;
+  padding: 20px 30px;
+  margin: 0 auto;
+  background-color: #fff;
+  margin-top: 100px;
+  border-radius: 10px;
+  position: relative;
+}
+h3 {
+  color: #005fc5;
+  border-bottom: 1px solid #cdcdcc;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 500;
+}
+.content p {
+  color: #005fc5;
+  font-size: 24px;
+  font-weight: 100;
+  white-space: nowrap;
+}
+.content > div {
+  display: flex;
+}
+#close {
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  font-size: 24px;
+  color: #dcdcdc;
+  background-color: #fff;
+  border: none;
+}
+#btn {
+  margin: 0 auto;
+  display: block;
+  margin-top: 20px;
+  width: 200px;
+  font-size: 24px;
+  height: 50px;
+  background-color: red;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+}
+.item {
+  line-height: 30px;
+}
+.item > span {
+  margin: 0 20px;
+  cursor: pointer;
+}
+.active {
+  color: #005fc5;
+}
