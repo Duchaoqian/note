@@ -28,6 +28,7 @@ function forEachComponent(
       filename !== 'index.html' &&
       filename !== 'script.js' &&
       filename !== 'style.css' &&
+      filename !== 'description.txt' &&
       typeof raw[filename] === 'string'
     )
       files[filename] = <string>raw[filename]
