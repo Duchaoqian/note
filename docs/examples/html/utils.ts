@@ -7,6 +7,16 @@ export type ExampleData = {
   _hint?: ExampleData
 }
 
+function deepFile(path: String, raw: ExampleData, files: Record<string, string>) {
+  for (const filename in raw) {
+    if (typeof raw[filename] !== 'string') {
+      // continue
+      deepFile(path + '/' + filename, raw[filename], files)
+    } else {
+      files[path + '/' + filename] = <string>raw[filename]
+    }
+  }
+}
 function forEachComponent(
   raw: ExampleData,
   files: Record<string, string>,
@@ -14,8 +24,18 @@ function forEachComponent(
 ) {
   const { 'index.html': template, 'script.js': script, 'style.css': style } = raw
   for (const filename in raw) {
-    if (filename !== 'index.html' && filename !== 'script.js' && filename !== 'style.css')
+    if (
+      filename !== 'index.html' &&
+      filename !== 'script.js' &&
+      filename !== 'style.css' &&
+      typeof raw[filename] === 'string'
+    )
       files[filename] = <string>raw[filename]
+    else if (typeof raw[filename] !== 'string') {
+      // continue
+      // console.log(raw[filename])
+      deepFile(filename, raw[filename], files)
+    }
   }
   cb({ template, script, style })
 }
@@ -38,9 +58,7 @@ export function resolveSFCExample(raw: ExampleData, preferComposition: boolean) 
       )
     sfcContent += template
     files['index' + '.html'] = sfcContent
-    console.log(files)
   })
-  console.log(files)
 
   return files
 }
@@ -57,7 +75,6 @@ export function resolveNoBuildExample(raw: ExampleData, preferComposition: boole
   files['index.html'] = html
   forEachComponent(raw, files, ({ template, script, style }) => {
     if (style) css += style
-    console.log(template)
 
     if (template)
       html += template.replace(

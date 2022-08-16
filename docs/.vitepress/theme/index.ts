@@ -1,9 +1,14 @@
 import { h, App } from 'vue'
 import theme from './theme-layout/theme'
 import PreferenceSwitch from './components/PreferenceSwitch.vue'
-import { preferComposition, preferSFC, filterHeadersByPreference,preferHtml } from './components/preferences'
+import {
+  preferComposition,
+  preferSFC,
+  filterHeadersByPreference,
+  preferHtml
+} from './components/preferences'
 
-import SponsorsAside from './components/SponsorsAside.vue'
+// import SponsorsAside from './components/SponsorsAside.vue'
 // import VueJobs from './components/VueJobs.vue'
 import VueSchoolLink from './components/VueSchoolLink.vue'
 // import Banner from './components/Banner.vue'

@@ -13,7 +13,7 @@ import ReplLoading from '../../.vitepress/theme/components/ReplLoading.vue'
 export default {
   components: {
     ExampleRepl: defineAsyncComponent({
-      loader: () => import(/* webpackChunkName: vueRepl */ './ExampleRepl.vue', ),
+      loader: () => import(/* webpackChunkName: vueRepl */ './ExampleRepl.vue' ),
       loadingComponent: ReplLoading
     })
   }

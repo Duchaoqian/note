@@ -29,12 +29,12 @@ export default defineConfigWithTheme<ThemeConfig>({
         text: '示例',
         items: [
           {
-            text: 'vue',
-            link: '/examples/vue/'
-          },
-          {
             text: 'html',
             link: '/examples/html/'
+          },
+          {
+            text: 'vue',
+            link: '/examples/vue/'
           }
         ]
       }
@@ -43,7 +43,7 @@ export default defineConfigWithTheme<ThemeConfig>({
       { icon: 'github', link: 'https://github.com' },
       {
         icon: 'gitee',
-        link: 'https://github.com'
+        link: 'https://gitee.com'
       }
     ],
 
@@ -69,8 +69,17 @@ export default defineConfigWithTheme<ThemeConfig>({
       ],
       '/examples/html/': [
         {
-          text: 'hello word',
-          link: '/examples/html/#demo'
+          text: 'html案例',
+          items: [
+            {
+              text: 'hello word',
+              link: '/examples/html/#demo'
+            },
+            {
+              text: '轮播图',
+              link: '/examples/html/#banner'
+            }
+          ]
         }
       ],
       '/examples/vue/': [

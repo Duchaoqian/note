@@ -23,7 +23,6 @@ function updateExample() {
     hash = 'demo'
     location.hash = `#${hash}`
   }
-  console.log(preferHtml.value)
 
   store.setFiles(
     preferHtml.value
