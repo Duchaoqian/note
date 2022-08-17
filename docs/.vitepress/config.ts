@@ -126,6 +126,18 @@ export default defineConfigWithTheme<ThemeConfig>({
             {
               text: '拼图',
               link: '/examples/javascript/#image-puzzle'
+            },
+            {
+              text: '抛物线',
+              link: '/examples/javascript/#parabolic'
+            },
+            {
+              text: '图片爆炸',
+              link: '/examples/javascript/#image-explosion'
+            },
+            {
+              text: '时钟',
+              link: '/examples/javascript/#timer'
             }
           ]
         },
@@ -160,12 +172,21 @@ export default defineConfigWithTheme<ThemeConfig>({
               link: '/examples/jquery/#accordion'
             },
             {
-              text: '小球碰撞',
-              link: '/examples/jquery/#ball-collision'
-            },
-            {
               text: '数码管计时器',
               link: '/examples/jquery/#digital-tube-timer'
+            },
+            {
+              text: '日历',
+              link: '/examples/jquery/#calendar'
+            }
+          ]
+        },
+        {
+          text: 'canvas',
+          items: [
+            {
+              text: '雷达',
+              link: '/examples/jquery/#canvas-radar'
             }
           ]
         }

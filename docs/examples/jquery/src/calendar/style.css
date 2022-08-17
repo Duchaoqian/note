@@ -1,0 +1,52 @@
+ul,
+      li {
+        margin: 0;
+        list-style: none;
+        padding: 0;
+      }
+      .box {
+        width: 500px;
+        height: 500px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px #ababab;
+        margin: 0 auto;
+      }
+      header {
+        height: 50px;
+        line-height: 50px;
+        font-size: 20px;
+        padding: 0 20px;
+        border-bottom: 1px solid #eee;
+      }
+      main {
+        padding: 0 30px;
+      }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+        font-weight: 900;
+        /* border-bottom: 1px solid #eee; */
+      }
+      nav > button {
+        background-color: rgba(0, 0, 0, 0);
+        border: none;
+      }
+      .week {
+        display: flex;
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+      }
+      .week > li {
+        flex: 1;
+        text-align: center;
+      }
+      .date > li {
+        width: calc(100% / 7);
+        text-align: center;
+        margin: 10px 0;
+      }
+      .date {
+        display: flex;
+        flex-wrap: wrap;
+      }

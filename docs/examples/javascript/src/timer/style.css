@@ -1,0 +1,90 @@
+body {
+  margin: 0;
+}
+
+.timer {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(./timer/time.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 100%;
+  position: relative;
+}
+
+.h {
+  width: 20px;
+  height: 200px;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  transform: translateY(-30%);
+  z-index: 9;
+  border-radius: 10px;
+  transform-origin: 50% 80%;
+  animation: move calc(12 * 60 * 60s) linear infinite;
+}
+
+.m {
+  width: 16px;
+  height: 280px;
+  background-color: blue;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  transform: translateY(-30%);
+  z-index: 8;
+  border-radius: 8px;
+  transform-origin: 50% 80%;
+  animation: move calc(60 * 60s) linear infinite;
+}
+
+.s {
+  width: 12px;
+  height: 360px;
+  background-color: red;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  transform: translateY(-30%);
+  border-radius: 6px;
+  /* 设置旋转中心点 */
+  transform-origin: 50% 80%;
+  animation: move 60s linear infinite;
+  /* animation-delay 写负值 就代表动画已经执行了多久  */
+  animation-delay: -30s;
+}
+
+.oredr {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 10;
+}
+
+@keyframes move {
+  0% {
+    transform: translateY(-30%) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(-30%) rotate(360deg);
+  }
+}
