@@ -87,8 +87,8 @@ export function resolveNoBuildExample(raw: ExampleData, preferComposition: boole
     </script>`
       )
     if (script) {
-      script = script.replace(/(\$|jQuery)/g, function (match, group) {
-        return `window.${group}`
+      script = script.replace(/(\$|jQuery)([^\w])/g, function (match, group, group1) {
+        return `window.${group}${group1}`
       })
       js += `import 'jquery'\n\n${script}`
     }

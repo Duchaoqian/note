@@ -60,7 +60,7 @@ export function resolveSFCExample(raw: ExampleData, preferComposition: boolean) 
         `<script type='module'>\n\n\t${script}\n\n</script>`
       )
     sfcContent += template
-    files['index' + '.html'] = sfcContent
+    files['index.html'] = sfcContent || ''
   })
 
   return files
@@ -87,7 +87,7 @@ export function resolveNoBuildExample(raw: ExampleData, preferComposition: boole
       import "./script.js"
     </script>`
       )
-    if (script) js += script
+    if (script) js += script || ''
   })
   files['index.html'] = html
   if (css) {

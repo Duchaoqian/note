@@ -118,6 +118,14 @@ export default defineConfigWithTheme<ThemeConfig>({
             {
               text: '城市四级联动',
               link: '/examples/javascript/#city-four-linkage'
+            },
+            {
+              text: '笑脸',
+              link: '/examples/javascript/#smiling-face'
+            },
+            {
+              text: '拼图',
+              link: '/examples/javascript/#image-puzzle'
             }
           ]
         },
@@ -131,6 +139,10 @@ export default defineConfigWithTheme<ThemeConfig>({
             {
               text: 'canvas 连线动画',
               link: '/examples/javascript/#canvas-line'
+            },
+            {
+              text: 'canvas 画布',
+              link: '/examples/javascript/#drawing-board'
             }
           ]
         }
@@ -150,6 +162,10 @@ export default defineConfigWithTheme<ThemeConfig>({
             {
               text: '小球碰撞',
               link: '/examples/jquery/#ball-collision'
+            },
+            {
+              text: '数码管计时器',
+              link: '/examples/jquery/#digital-tube-timer'
             }
           ]
         }
@@ -260,7 +276,7 @@ export default defineConfigWithTheme<ThemeConfig>({
 
     footer: {
       message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2019-present Mr. Du'
+      copyright: `Copyright © 2019-${new Date().getFullYear()} Mr. Du`
     }
   }
 })
