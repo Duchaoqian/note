@@ -106,39 +106,39 @@ newbee-mall 项目是一套电商系统，包括 newbee-mall 商城系统及 new
 
 - 登录页
 
-![](static-files/登录.png)
+![](static-files/01.png)
 
 - 首页
 
-![](static-files/首页.png)
+![](static-files/02.png)
 
 - 商品搜索
 
-![](static-files/商品搜索.png)
+![](static-files/03.png)
 
 - 商品详情页
 
-![](static-files/详情页.png)
+![](static-files/04.png)
 
 - 购物车
 
-![](static-files/购物车.png)
+![](static-files/05.png)
 
 - 生成订单
 
-![](static-files/生成订单.png)
+![](static-files/06.png)
 
 - 地址管理
 
-![](static-files/地址管理.png)
+![](static-files/07.png)
 
 - 订单列表
 
-![](static-files/订单列表.png)
+![](static-files/08.png)
 
 - 订单详情
 
-![](static-files/订单详情.png)
+![](static-files/09.png)
 
 ## 感谢
 

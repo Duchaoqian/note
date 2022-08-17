@@ -307,7 +307,7 @@ export default defineConfigWithTheme<ThemeConfig>({
             },
             {
               text: '萤火商城',
-              link: '/project/mobile/萤火商城/'
+              link: '/project/mobile/萤火商城s/'
             }
           ]
         }
