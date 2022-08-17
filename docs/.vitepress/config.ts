@@ -46,6 +46,10 @@ export default defineConfigWithTheme<ThemeConfig>({
             link: '/examples/vue/'
           }
         ]
+      },
+      {
+        text: '开源项目',
+        link: '/project/'
       }
     ],
     socialLinks: [
@@ -289,6 +293,21 @@ export default defineConfigWithTheme<ThemeConfig>({
             {
               text: '单元格',
               link: '/examples/vue/#cells'
+            }
+          ]
+        }
+      ],
+      '/project/': [
+        {
+          text: '移动端项目',
+          items: [
+            {
+              text: '新蜂商城',
+              link: '/project/mobile/newbee/'
+            },
+            {
+              text: '萤火商城',
+              link: '/project/mobile/萤火商城/'
             }
           ]
         }
