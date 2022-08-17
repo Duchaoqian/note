@@ -1,3 +1,4 @@
+<meta name="referrer" content="no-referrer" />
 # 社交软件，交友软件，uniapp前端项目，java后台强调
 
 #### 介绍
