@@ -308,6 +308,18 @@ export default defineConfigWithTheme<ThemeConfig>({
             {
               text: '萤火商城',
               link: '/project/mobile/萤火商城/'
+            },
+            {
+              text: '前端铺子',
+              link: '/project/mobile/前端铺子/'
+            },
+            {
+              text: '小情书',
+              link: '/project/mobile/小情书/'
+            },
+            {
+              text: '约拍',
+              link: '/project/mobile/约拍/'
             }
           ]
         }
