@@ -1,4 +1,7 @@
 <meta name="referrer" content="no-referrer" />
+
+[gitee访问](https://gitee.com/lqp9595/gongyouUniapp)
+
 # 社交软件，交友软件，uniapp前端项目，java后台强调
 
 #### 介绍

@@ -322,6 +322,15 @@ export default defineConfigWithTheme<ThemeConfig>({
               link: '/project/mobile/约拍/'
             }
           ]
+        },
+        {
+          text: 'pc端项目',
+          items: [
+            {
+              text: '网易云音乐',
+              link: '/project/pc/网易云音乐/'
+            }
+          ]
         }
       ]
     },
