@@ -159,6 +159,10 @@ export default defineConfigWithTheme<ThemeConfig>({
             {
               text: 'canvas 画布',
               link: '/examples/javascript/#drawing-board'
+            },
+            {
+              text: '验证码',
+              link: '/examples/javascript/#auth-code'
             }
           ]
         }
