@@ -320,6 +320,10 @@ export default defineConfigWithTheme<ThemeConfig>({
             {
               text: '约拍',
               link: '/project/mobile/约拍/'
+            },
+            {
+              text: '饿了吗',
+              link: '/project/mobile/饿了吗/'
             }
           ]
         },
