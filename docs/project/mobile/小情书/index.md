@@ -1,3 +1,7 @@
+<meta name="referrer" content="no-referrer" />
+
+[GitHub 访问](https://github.com/Duchaoqian/school_wechat)
+
 **部署好后台之后，需要部署前端小程序项目**
 
 后台源码在这里：https://github.com/oubingbing/wechatAlliance
