@@ -1,0 +1,1 @@
+import{_ as s,o as _,c as o,e}from"../app.fd891c0a.js";const i={},n={class:"repl-loading"},d=e("div",{class:"lds-ring"},[e("div"),e("div"),e("div"),e("div")],-1),t=e("div",null,"Repl is loading...",-1),a=[d,t];function c(l,r){return _(),o("div",n,a)}var p=s(i,[["render",c]]);export{p as R};
