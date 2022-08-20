@@ -10,5 +10,5 @@ hero:
   actions:
     - theme: brand
       text: 开始学习
-      link: /examples/html/ß
+      link: /examples/html/
 ---
