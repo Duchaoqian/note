@@ -1,5 +1,13 @@
 ---
 layout: home
+head:
+  - - meta
+    - name: baidu-site-verification
+      content: code-x4zweLOROS
+  - - link
+    - type: image/x-icon
+      ref: icon
+      href: /favicon.ico
 hero:
   name: 前端笔记
   text: 前端学习笔记，知识点总结.
