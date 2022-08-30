@@ -1,6 +1,6 @@
 <meta name="referrer" content="no-referrer" />
 
-[GitHub 访问](https://elm.cangdu.org/v1/cities?type=guess)
+[GitHub 访问](https://github.com/bailicangdu/vue2-elm)
 
 # 前言
 
