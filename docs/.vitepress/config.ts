@@ -23,6 +23,10 @@ export default defineConfigWithTheme<ThemeConfig>({
           {
             text: '实用工具',
             link: '/note/实用工具/'
+          },
+          {
+            text: 'TypeScript',
+            link: '/note/TypeScript/'
           }
         ]
       },
@@ -78,6 +82,15 @@ export default defineConfigWithTheme<ThemeConfig>({
         {
           text: '实用工具',
           items: [{ text: 'mock', link: '/note/实用工具/mock' }]
+        }
+      ],
+      '/note/TypeScript/': [
+        {
+          text: 'TypeScript',
+          items: [
+            { text: 'TS安装', link: '/note/TypeScript/01-ts安装' },
+            { text: 'TS数据类型', link: '/note/TypeScript/02-ts数据类型' }
+          ]
         }
       ],
       '/examples/html/': [
