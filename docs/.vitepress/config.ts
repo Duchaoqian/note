@@ -89,7 +89,11 @@ export default defineConfigWithTheme<ThemeConfig>({
           text: 'TypeScript',
           items: [
             { text: 'TS安装', link: '/note/TypeScript/01-ts安装' },
-            { text: 'TS数据类型', link: '/note/TypeScript/02-ts数据类型' }
+            { text: 'TS数据类型', link: '/note/TypeScript/02-ts数据类型' },
+            { text: 'TS类(class)', link: '/note/TypeScript/03-ts类(class)' },
+            { text: 'TS断言和类型守卫', link: '/note/TypeScript/04-ts断言和类型守卫' },
+            { text: 'TS类型别名、接口', link: '/note/TypeScript/05-ts类型别名、接口' },
+            { text: 'TS泛型', link: '/note/TypeScript/06-ts泛型' }
           ]
         }
       ],
