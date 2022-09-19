@@ -6,12 +6,29 @@ export default defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig,
   title: '前端笔记',
   description: '前端学习笔记，课件案例，知识点总结',
+  head: [
+    ['link', { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    // 百度统计
+    [
+      'script',
+      {},
+      `
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?ce1b5174c10a15df873720800def7268";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+  `
+    ]
+  ],
+
   // base: './',
   themeConfig: {
     // 导航栏
     lastUpdated: true,
     logo: '/logo.jpeg',
-    head: [['link', { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]],
     nav: [
       {
         text: '笔记',

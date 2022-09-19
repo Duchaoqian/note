@@ -1,4 +1,4 @@
-import { h, App } from 'vue'
+import { h, App, watch } from 'vue'
 import theme from './theme-layout/theme'
 import PreferenceSwitch from './components/PreferenceSwitch.vue'
 import {
@@ -32,11 +32,19 @@ export default Object.assign({}, theme, {
         })
     })
   },
-  enhanceApp({ app }: { app: App }) {
+  enhanceApp({ app, router }) {
     app.provide('prefer-composition', preferComposition)
     app.provide('prefer-sfc', preferSFC)
     app.provide('prefer-html', preferHtml)
     app.provide('filter-headers', filterHeadersByPreference)
     app.component('VueSchoolLink', VueSchoolLink)
+    // 百度统计
+    watch(router.route, (to, from) => {
+      if (typeof _hmt != 'undefined') {
+        if (to.path) {
+          _hmt.push(['_trackPageview', to.fullPath])
+        }
+      }
+    })
   }
 })
