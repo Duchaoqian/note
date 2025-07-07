@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>画布</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <canvas width="800px" height="500px"></canvas>
+      <div class="right">
+        <div class="borde_w">
+          <label for="">线条宽度：</label>
+          <select name="text" id="num_text">
+            <option value="2">2</option>
+            <option value="4" selected="selected">4</option>
+            <option value="6">6</option>
+            <option value="8">8</option>
+            <option value="10">10</option>
+          </select>
+        </div>
+        <div class="color">
+          <label for="color">颜色选择：</label>
+          <input type="color" id="color" />
+        </div>
+        <button id="clear">清除</button>
+        <br />
+        <button class="cle" id="up">向上撤回</button>
+        <br />
+        <button class="cle" id="down">向下撤回</button>
+      </div>
+    </div>
+  </body>
+  <script src="./script.js"></script>
+</html>
