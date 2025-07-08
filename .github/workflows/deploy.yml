@@ -18,13 +18,13 @@ jobs:
         with:
           fetch-depth: 0
       
-      - uses: pnpm/action-setup@v2 # 如果你使用 pnpm
+      - uses: pnpm/action-setup@v4 # 如果你使用 pnpm
         with:
           version: 8
       
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
           cache: pnpm # 或 npm/yarn
       
       - run: pnpm install # 或 npm install / yarn install
@@ -33,10 +33,10 @@ jobs:
         run: pnpm docs:build # 根据你的项目调整构建命令
       
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
           path: .vitepress/dist
       
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v3
