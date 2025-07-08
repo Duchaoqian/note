@@ -1,24 +1,31 @@
-name: Deploy VitePress to GitHub Pages
+name: Deploy VitePress
 
 on:
   push:
     branches: [master]
 
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          submodules: recursive
 
       - name: Setup PNPM
         uses: pnpm/action-setup@v2
@@ -32,17 +39,19 @@ jobs:
           cache: 'pnpm'
 
       - name: Install dependencies
-        run: pnpm install
+        run: |
+          pnpm install
+          pnpm list --depth 0
 
       - name: Build
         run: pnpm run docs:build
 
-      - name: Verify build output
+      - name: Validate build
         run: |
           ls -la .vitepress/dist
-          [ -f .vitepress/dist/index.html ] || exit 1
+          [ -f .vitepress/dist/index.html ] || { echo "Build failed - no index.html"; exit 1; }
 
-      - name: Add CNAME
+      - name: Prepare CNAME
         run: |
           mkdir -p .vitepress/dist
           echo "jszhan.top" > .vitepress/dist/CNAME
@@ -51,9 +60,10 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
+          name: vite-press
           path: .vitepress/dist
-          retention-days: 1  # 添加保留时间
+          retention-days: 2
 
       - name: Deploy
         uses: actions/deploy-pages@v3
-        timeout-minutes: 5  # 添加超时设置
+        timeout-minutes: 10
