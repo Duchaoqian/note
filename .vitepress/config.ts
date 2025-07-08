@@ -42,6 +42,10 @@ let option = {
   themeConfig: {
     // 导航栏
     lastUpdated: true,
+    editLink: {
+      pattern: 'https://github.com/Duchaoqian/note/edit/master/docs/:path',
+      text: '在Github上编辑'
+    },
     logo: "/logo.jpeg",
     nav: [
       {
