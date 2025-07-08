@@ -1,47 +1,59 @@
-name: GitHub Actions Build and Deploy
- 
+name: Deploy VitePress
+
 on:
-  # 手动运行工作流程（workflow_dispatch 事件触发器配置后可以在actions下手动运行工作流）
-  workflow_dispatch: write
- 
+  push:
+    branches: [master]
+
 jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest  #指定服务器的运行环境：最新版本ubuntu
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    
     steps:
-      # 使用actions/checkout@v4 库拉取代码到 ubuntu 上
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          # 根据网上资料查询此处可以设置为 false。https://github.com/actions/checkout
+          fetch-depth: 0
           persist-credentials: false
- 
-      # 安装 pnpm
-      - name: Install pnpm
+
+      - name: Setup PNPM
         uses: pnpm/action-setup@v2
+        if: "!env.ACT"
         with:
           version: 8
- 
-      # 设置node的版本
-      - name: Use Node.js
-        # 使用 actions/setup-node@v3 库安装 nodejs，with 提供了一个参数 node-version 表示要安装的 nodejs 版本
-        uses: actions/setup-node@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          node-version: '20.x'
+          node-version: 20
           cache: 'pnpm'
- 
-      # 打包成静态文件
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
       - name: Build
-        run: pnpm install && pnpm build
- 
-      # 部署到GitHub Pages - 也就是将打包内容发布到GitHub Pages
-      - name: Deploy
-        # 使用别人写好的 actions去部署（将打包文件部署到指定分支上）
-        uses: JamesIves/github-pages-deploy-action@v4.3.3
-        # 自定义环境变量
+        run: pnpm run docs:build
+
+      - name: Verify build output
+        run: |
+          ls -la .vitepress/dist
+          [ -f .vitepress/dist/index.html ] || exit 1
+
+      - name: Upload artifact (Temp)
+        uses: actions/upload-artifact@v4
         with:
-          # 指定仓库：你要发布的仓库路径名
-          repository-name: note
-          # 部署到 deploy-pages 分支，也就是部署后提交到那个分支
-          branch: view
-          # 填写打包好的目录名称路径，本项目配置在根目录
-          folder: ./vitepress/dist
+          name: vite-dist
+          path: .vitepress/dist
+          retention-days: 1
+
+      - name: Upload for Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .vitepress/dist
+
+      - name: Deploy
+        uses: actions/deploy-pages@v3
+        timeout-minutes: 5
