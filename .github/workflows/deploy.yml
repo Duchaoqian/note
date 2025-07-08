@@ -2,7 +2,7 @@ name: Deploy VitePress site to Pages
 
 on:
   push:
-    branches: [main] # 或 master，取决于你的默认分支
+    branches: [master] # 或 master，取决于你的默认分支
 
 jobs:
   deploy:
