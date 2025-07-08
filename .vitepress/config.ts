@@ -3,6 +3,7 @@ import type { Config as ThemeConfig } from "@vue/theme";
 import baseConfig from "@vue/theme/config";
 import { makedir } from "./pathConfig";
 import path from "path";
+import { text } from "stream/consumers";
 let vuedir = makedir(path.join(__dirname, "../note/vue"), "/note/vue/");
 
 let option = {
@@ -10,7 +11,7 @@ let option = {
   title: "编程笔记",
   description: "编程习笔记，课件案例，知识点总结",
   sitemap: {
-    hostname: 'https://jszhan.top'
+    hostname: "https://jszhan.top",
   },
   head: [
     ["link", { rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
@@ -19,21 +20,21 @@ let option = {
       "script",
       {},
       `
-      var _hmt = _hmt || [];
-      (function() {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?ce1b5174c10a15df873720800def7268";
-        var s = document.getElementsByTagName("script")[0]; 
-        s.parentNode.insertBefore(hm, s);
-      })();
+     var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?5fcbb7c150368e4dd13976ab2a173207";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
       `,
     ],
   ],
   markdown: {
     theme: {
-      light: 'min-dark',
-      dark: 'min-dark',
-    }
+      light: "min-dark",
+      dark: "min-dark",
+    },
   },
   // base: './',
   themeConfig: {
@@ -42,55 +43,60 @@ let option = {
     logo: "/logo.jpeg",
     nav: [
       {
-        text: "笔记",
+        text: "前端",
         items: [
           {
-            text: "JavaScript",
-            link: "/note/JavaScript/",
-          },
-          {
-            text: "nodejs",
-            link: "/note/nodejs/",
-          },
+            text: "笔记",
+            items: [
+              {
+                text: "JavaScript",
+                link: "/note/JavaScript/",
+              },
+              {
+                text: "nodejs",
+                link: "/note/nodejs/",
+              },
 
-          {
-            text: "TypeScript",
-            link: "/note/TypeScript/",
+              {
+                text: "TypeScript",
+                link: "/note/TypeScript/",
+              },
+              {
+                text: "vue",
+                link: "/note/vue/",
+              },
+              {
+                text: "实用工具",
+                link: "/note/实用工具/",
+              },
+            ],
           },
           {
-            text: "vue",
-            link: "/note/vue/",
+            text: "示例",
+            items: [
+              {
+                text: "html",
+                link: "/examples/html/",
+              },
+              {
+                text: "javascript",
+                link: "/examples/javascript/",
+              },
+              {
+                text: "jquery",
+                link: "/examples/jquery/",
+              },
+              {
+                text: "vue",
+                link: "/examples/vue/",
+              },
+            ],
           },
           {
-            text: "实用工具",
-            link: "/note/实用工具/",
+            text: "开源项目",
+            link: "/project/",
           },
         ],
-      },
-      {
-        text: "示例",
-        items: [
-          {
-            text: "html",
-            link: "/examples/html/",
-          },
-          {
-            text: "javascript",
-            link: "/examples/javascript/",
-          },
-          {
-            text: "jquery",
-            link: "/examples/jquery/",
-          },
-          {
-            text: "vue",
-            link: "/examples/vue/",
-          },
-        ],
-      },
-      {
-        text: "开源项目",
-        link: "/project/",
       },
     ],
     socialLinks: [

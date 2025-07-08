@@ -34,8 +34,6 @@ export default {
         }
       }
     });
-    
-    // router.push(router.route)
     // ...
   },
 };
