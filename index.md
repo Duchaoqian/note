@@ -9,7 +9,7 @@ head:
       ref: icon
       href: /favicon.ico
 hero:
-  name: 开发笔记
+  name: 学习笔记
   text: 编程开发学习笔记，知识点总结.
   tagline: 笔记，案例持续更新中。。。 Mr. Du
   image:
