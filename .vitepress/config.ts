@@ -8,6 +8,7 @@ let vuedir = makedir(path.join(__dirname, "../note/vue"), "/note/vue/");
 
 let option = {
   extends: baseConfig,
+  lang:"zh-CN",
   title: "编程笔记",
   description: "编程习笔记，课件案例，知识点总结",
   sitemap: {
