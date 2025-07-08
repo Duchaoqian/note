@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy VitePress to GitHub Pages
 
 on:
   push:
@@ -13,45 +13,47 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - uses: pnpm/action-setup@v2
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v2
         with:
           version: 8
-          
-      - uses: actions/setup-node@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'pnpm'
-      
-      - run: pnpm install
-      
+
+      - name: Install dependencies
+        run: pnpm install
+
       - name: Build
         run: pnpm run docs:build
-      
-      # 确保构建目录存在
+
       - name: Verify build output
         run: |
           ls -la .vitepress/dist
           [ -f .vitepress/dist/index.html ] || exit 1
-      
-      # 添加 CNAME
+
       - name: Add CNAME
         run: |
           mkdir -p .vitepress/dist
           echo "jszhan.top" > .vitepress/dist/CNAME
           echo "www.jszhan.top" >> .vitepress/dist/CNAME
-      
-      # 上传产物
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: .vitepress/dist
-      
-      # 部署
-      - name: Deploy to GitHub Pages
-        id: deployment
+          retention-days: 1  # 添加保留时间
+
+      - name: Deploy
         uses: actions/deploy-pages@v3
+        timeout-minutes: 5  # 添加超时设置
