@@ -14,6 +14,8 @@ let option = {
     hostname: "https://jszhan.top",
   },
   head: [
+    ["link", { rel: "canonical", href: "https://jszhan.top" }],
+    ["meta", { name: "referrer", content: "no-referrer-when-downgrade" }],
     ["link", { rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
     // 百度统计
     [
@@ -36,7 +38,7 @@ let option = {
       dark: "min-dark",
     },
   },
-  // base: './',
+  base: "/",
   themeConfig: {
     // 导航栏
     lastUpdated: true,

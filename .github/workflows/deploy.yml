@@ -1,8 +1,8 @@
-name: Deploy VitePress site to Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [master] # 或 master，取决于你的默认分支
+    branches: [master]  # 你的分支是 master
 
 jobs:
   deploy:
@@ -18,19 +18,21 @@ jobs:
         with:
           fetch-depth: 0
       
-      - uses: pnpm/action-setup@v4 # 如果你使用 pnpm
-        with:
-          version: 8
-      
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: pnpm # 或 npm/yarn
+          cache: 'pnpm'  # 根据你的包管理器调整
       
-      - run: pnpm install # 或 npm install / yarn install
+      - run: pnpm install
       
       - name: Build
-        run: pnpm docs:build # 根据你的项目调整构建命令
+        run: pnpm run docs:build
+      
+      # 确保 CNAME 在构建输出中
+      - name: Add CNAME
+        run: |
+          echo "jszhan.top" > .vitepress/dist/CNAME
+          echo "www.jszhan.top" >> .vitepress/dist/CNAME
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
