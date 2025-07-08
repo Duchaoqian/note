@@ -40,7 +40,6 @@ jobs:
       - name: Add CNAME
         run: |
           echo "jszhan.top" > .vitepress/dist/CNAME
-          echo "www.jszhan.top" >> .vitepress/dist/CNAME
       
       # 上传产物
       - name: Upload artifact
