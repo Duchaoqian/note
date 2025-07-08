@@ -17,8 +17,18 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          
+      # 添加 pnpm 安装
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
       
       - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'  # 使用 pnpm 缓存
+      
+      - run: pnpm install  # 使用 pnpm 替代 npm
         with:
           node-version: 20
           cache: 'pnpm'  # 根据你的包管理器调整
