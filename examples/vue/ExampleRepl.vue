@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { Repl, useStore, useVueImportMap } from "@vue/repl";
-import Monaco from "@vue/repl/monaco-editor";
+import codemirror from "@vue/repl/codemirror-editor";
 
-import "@vue/repl/style.css";
 import { data } from "./examples.data";
 import { inject, watchEffect, version, Ref, ref } from "vue";
 import {
@@ -51,7 +50,7 @@ function updateExample() {
 <template>
   <Repl
     :store="store"
-    :editor="Monaco"
+    :editor="codemirror"
     :showImportMap="!preferSFC"
     :showCompileOutput="false"
     :clearConsole="false"

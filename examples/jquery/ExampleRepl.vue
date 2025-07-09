@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { Repl, useStore } from "@vue/repl";
-import Monaco from "@vue/repl/monaco-editor";
-
-import "@vue/repl/style.css";
+import codemirror from "@vue/repl/codemirror-editor";
 import { data } from "./examples.data";
 import { inject, watchEffect, ref, Ref, watch } from "vue";
 import {
@@ -43,7 +41,7 @@ function updateExample() {
 <template>
   <Repl
     :store="store"
-    :editor="Monaco"
+    :editor="codemirror"
     :showImportMap="true"
     :showCompileOutput="false"
     :clearConsole="false"

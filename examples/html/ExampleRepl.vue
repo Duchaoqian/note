@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { Repl, useStore } from "@vue/repl";
-import Monaco from "@vue/repl/monaco-editor";
-import "@vue/repl/style.css";
+import codemirror from "@vue/repl/codemirror-editor";
 import { data } from "./examples.data";
 import { inject, watchEffect, ref, Ref } from "vue";
 import {
@@ -15,6 +14,7 @@ let preferHtml = (inject("prefer-html") as Ref<boolean>) || ref();
 const store = useStore({
   showOutput: ref(false),
   outputMode: ref("preview"),
+  // 添加编辑器主题设置
 });
 
 watchEffect(updateExample);
@@ -38,7 +38,7 @@ function updateExample() {
 <template>
   <Repl
     :store="store"
-    :editor="Monaco"
+    :editor="codemirror"
     :showImportMap="false"
     :showCompileOutput="false"
     :clearConsole="false"
