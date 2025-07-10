@@ -3,12 +3,11 @@ import type { Config as ThemeConfig } from "@vue/theme";
 import baseConfig from "@vue/theme/config";
 import { makedir } from "./pathConfig";
 import path from "path";
-import { text } from "stream/consumers";
 let vuedir = makedir(path.join(__dirname, "../note/vue"), "/note/vue/");
 
 let option = {
   extends: baseConfig,
-  lang:"zh-CN",
+  lang: "zh-CN",
   title: "编程笔记",
   description: "编程习笔记，课件案例，知识点总结",
   sitemap: {
@@ -44,8 +43,8 @@ let option = {
     // 导航栏
     lastUpdated: true,
     editLink: {
-      pattern: 'https://github.com/Duchaoqian/note/edit/master/:path',
-      text: '在Github上编辑'
+      pattern: "https://github.com/Duchaoqian/note/edit/master/:path",
+      text: "在Github上编辑",
     },
     logo: "/logo.jpeg",
     nav: [
@@ -104,6 +103,10 @@ let option = {
             link: "/project/",
           },
         ],
+      },
+      {
+        text: "cSharp基础",
+        items: [{ text: "基础语法", link: "/csharp/base/" }],
       },
     ],
     socialLinks: [
@@ -426,6 +429,14 @@ let option = {
               text: "网易云音乐",
               link: "/project/pc/网易云音乐/",
             },
+          ],
+        },
+      ],
+      "/csharp/base/": [
+        {
+          text: "cSharp基础",
+          items: [
+            ...makedir(path.join(__dirname, "../csharp/base"), "/csharp/base/"),
           ],
         },
       ],
