@@ -49,6 +49,13 @@ let option = {
     logo: "/logo.jpeg",
     nav: [
       {
+        text: "cSharp基础",
+        items: [{ text: "基础语法", link: "/csharp/base/" }, {
+          text: "常用内置类",
+          link: "/csharp/内置类/",
+        }],
+      },
+      {
         text: "前端",
         items: [
           {
@@ -104,10 +111,7 @@ let option = {
           },
         ],
       },
-      {
-        text: "cSharp基础",
-        items: [{ text: "基础语法", link: "/csharp/base/" }],
-      },
+
     ],
     socialLinks: [
       { icon: "github", link: "https://github.com/Duchaoqian" },
@@ -437,6 +441,14 @@ let option = {
           text: "cSharp基础",
           items: [
             ...makedir(path.join(__dirname, "../csharp/base"), "/csharp/base/"),
+          ],
+        },
+      ],
+      "/csharp/内置类/": [
+        {
+          text: "cSharp基础",
+          items: [
+            ...makedir(path.join(__dirname, "../csharp/内置类"), "/csharp/内置类/"),
           ],
         },
       ],
