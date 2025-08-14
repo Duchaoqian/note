@@ -1,7 +1,7 @@
 # C# List
 
 ## 概述
-List<T> 是 C# 中最常用的泛型集合之一，它提供了动态数组的功能，可以存储相同类型的元素，并支持多种操作。本文档将全面介绍 List<T> 的所有主要属性和方法。
+List\<T> 是 C# 中最常用的泛型集合之一，它提供了动态数组的功能，可以存储相同类型的元素，并支持多种操作。本文档将全面介绍 List\<T> 的所有主要属性和方法。
 
 ## 属性
 
@@ -42,7 +42,7 @@ numbers.Add(2);
 // numbers 现在包含 [1, 2]
 ```
 
-#### AddRange(IEnumerable<T> collection)
+#### AddRange(IEnumerable\<T> collection)
 - **描述**: 将指定集合的元素添加到 List 的末尾
 - **参数**:
   - `collection`: 应将其元素添加到 List 末尾的集合
@@ -69,7 +69,7 @@ fruits.Insert(1, "Orange");
 // fruits 现在包含 ["Apple", "Orange", "Banana"]
 ```
 
-#### InsertRange(int index, IEnumerable<T> collection)
+#### InsertRange(int index, IEnumerable\<T> collection)
 - **描述**: 将集合中的元素插入 List 的指定索引处
 - **参数**:
   - `index`: 应插入新元素的从零开始的索引
@@ -110,7 +110,7 @@ numbers.RemoveAt(2); // 移除索引为2的元素(3)
 // numbers 现在包含 [1, 2, 4, 5]
 ```
 
-#### RemoveAll(Predicate<T> match)
+#### RemoveAll(Predicate\<T> match)
 - **描述**: 移除与指定的谓词所定义的条件相匹配的所有元素
 - **参数**:
   - `match`: 定义要移除的元素的条件
@@ -183,10 +183,10 @@ numbers.Sort();
 // numbers 现在包含 [1, 2, 3, 4]
 ```
 
-#### Sort(Comparison<T> comparison)
-- **描述**: 使用指定的 Comparison<T> 对整个 List 中的元素进行排序
+#### Sort(Comparison\<T> comparison)
+- **描述**: 使用指定的 Comparison\<T> 对整个 List 中的元素进行排序
 - **参数**:
-  - `comparison`: 比较元素时要使用的 Comparison<T>
+  - `comparison`: 比较元素时要使用的 Comparison\<T>
 - **示例**:
 ```csharp
 List<string> fruits = new List<string> {"Apple", "Banana", "Cherry"};
@@ -194,10 +194,10 @@ fruits.Sort((x, y) => x.Length.CompareTo(y.Length));
 // 按字符串长度排序，结果: ["Apple", "Cherry", "Banana"]
 ```
 
-#### Sort(IComparer<T> comparer)
+#### Sort(IComparer\<T> comparer)
 - **描述**: 使用指定的比较器对整个 List 中的元素进行排序
 - **参数**:
-  - `comparer`: 比较元素时要使用的 IComparer<T> 实现
+  - `comparer`: 比较元素时要使用的 IComparer\<T> 实现
 - **示例**:
 ```csharp
 List<string> fruits = new List<string> {"Apple", "Banana", "Cherry"};
@@ -267,7 +267,7 @@ int lastIndex = fruits.LastIndexOf("Banana"); // lastIndex = 3
   - `index`: 向后搜索的从零开始的起始索引
   - `count`: 要搜索的部分中的元素数
 
-#### Find(Predicate<T> match)
+#### Find(Predicate\<T> match)
 - **描述**: 搜索与指定谓词定义的条件匹配的元素，并返回整个 List 中的第一个匹配项
 - **参数**:
   - `match`: 定义要搜索的元素的条件
@@ -278,7 +278,7 @@ List<int> numbers = new List<int> {1, 2, 3, 4, 5};
 int firstEven = numbers.Find(x => x % 2 == 0); // firstEven = 2
 ```
 
-#### FindLast(Predicate<T> match)
+#### FindLast(Predicate\<T> match)
 - **描述**: 搜索与指定谓词定义的条件匹配的元素，并返回整个 List 中的最后一个匹配项
 - **参数**:
   - `match`: 定义要搜索的元素的条件
@@ -289,11 +289,11 @@ List<int> numbers = new List<int> {1, 2, 3, 4, 5};
 int lastEven = numbers.FindLast(x => x % 2 == 0); // lastEven = 4
 ```
 
-#### FindAll(Predicate<T> match)
+#### FindAll(Predicate\<T> match)
 - **描述**: 检索与指定谓词定义的条件匹配的所有元素
 - **参数**:
   - `match`: 定义要搜索的元素的条件
-- **返回值**: 包含所有匹配元素的新 List<T>
+- **返回值**: 包含所有匹配元素的新 List\<T>
 - **示例**:
 ```csharp
 List<int> numbers = new List<int> {1, 2, 3, 4, 5, 6};
@@ -301,7 +301,7 @@ List<int> evenNumbers = numbers.FindAll(x => x % 2 == 0);
 // evenNumbers 包含 [2, 4, 6]
 ```
 
-#### FindIndex(Predicate<T> match)
+#### FindIndex(Predicate\<T> match)
 - **描述**: 搜索与指定谓词定义的条件匹配的元素，并返回整个 List 中第一个匹配项的从零开始的索引
 - **参数**:
   - `match`: 定义要搜索的元素的条件
@@ -312,7 +312,7 @@ List<int> numbers = new List<int> {1, 3, 5, 2, 4};
 int firstEvenIndex = numbers.FindIndex(x => x % 2 == 0); // firstEvenIndex = 3
 ```
 
-#### FindLastIndex(Predicate<T> match)
+#### FindLastIndex(Predicate\<T> match)
 - **描述**: 搜索与指定谓词定义的条件匹配的元素，并返回整个 List 中最后一个匹配项的从零开始的索引
 - **参数**:
   - `match`: 定义要搜索的元素的条件
@@ -323,10 +323,10 @@ List<int> numbers = new List<int> {1, 3, 5, 2, 4};
 int lastEvenIndex = numbers.FindLastIndex(x => x % 2 == 0); // lastEvenIndex = 4
 ```
 
-#### ForEach(Action<T> action)
+#### ForEach(Action\<T> action)
 - **描述**: 对 List 的每个元素执行指定操作
 - **参数**:
-  - `action`: 要对 List 的每个元素执行的 Action<T> 委托
+  - `action`: 要对 List 的每个元素执行的 Action\<T> 委托
 - **示例**:
 ```csharp
 List<int> numbers = new List<int> {1, 2, 3};
@@ -342,7 +342,7 @@ numbers.ForEach(x => Console.WriteLine(x * 2));
 - **参数**:
   - `index`: 范围开始处的从零开始的索引
   - `count`: 范围中的元素数
-- **返回值**: 包含元素范围的新 List<T>
+- **返回值**: 包含元素范围的新 List\<T>
 - **示例**:
 ```csharp
 List<int> numbers = new List<int> {1, 2, 3, 4, 5};
@@ -363,25 +363,25 @@ int index = numbers.BinarySearch(5); // index = 2
 int notFound = numbers.BinarySearch(4); // 返回负值
 ```
 
-#### BinarySearch(T item, IComparer<T> comparer)
+#### BinarySearch(T item, IComparer\<T> comparer)
 - **描述**: 使用指定的比较器在整个已排序的 List 中搜索元素
 - **参数**:
   - `item`: 要查找的对象
-  - `comparer`: 比较元素时要使用的 IComparer<T> 实现
+  - `comparer`: 比较元素时要使用的 IComparer\<T> 实现
 
-#### BinarySearch(int index, int count, T item, IComparer<T> comparer)
+#### BinarySearch(int index, int count, T item, IComparer\<T> comparer)
 - **描述**: 使用指定的比较器在已排序 List 的某个元素范围中搜索元素
 - **参数**:
   - `index`: 要搜索的范围的从零开始的起始索引
   - `count`: 要搜索的范围的长度
   - `item`: 要查找的对象
-  - `comparer`: 比较元素时要使用的 IComparer<T> 实现
+  - `comparer`: 比较元素时要使用的 IComparer\<T> 实现
 
-#### ConvertAll<TOutput>(Converter<T, TOutput> converter)
-- **描述**: 将当前 List<T> 中的元素转换为另一种类型，并返回包含转换后的元素的列表
+#### ConvertAll\<TOutput>(Converter\<T, TOutput> converter)
+- **描述**: 将当前 List\<T> 中的元素转换为另一种类型，并返回包含转换后的元素的列表
 - **参数**:
   - `converter`: 将每个元素从一种类型转换为另一种类型的委托
-- **返回值**: 包含转换后的元素的新 List<TOutput>
+- **返回值**: 包含转换后的元素的新 List\<TOutput>
 - **示例**:
 ```csharp
 List<int> numbers = new List<int> {1, 2, 3};
@@ -415,7 +415,7 @@ numbers.CopyTo(array);
   - `arrayIndex`: array 中从零开始的索引，从此处开始复制
   - `count`: 要复制的元素数
 
-#### Exists(Predicate<T> match)
+#### Exists(Predicate\<T> match)
 - **描述**: 确定 List 是否包含与指定谓词定义的条件匹配的元素
 - **参数**:
   - `match`: 定义要搜索的元素的条件
@@ -426,7 +426,7 @@ List<int> numbers = new List<int> {1, 2, 3, 4, 5};
 bool hasEven = numbers.Exists(x => x % 2 == 0); // true
 ```
 
-#### TrueForAll(Predicate<T> match)
+#### TrueForAll(Predicate\<T> match)
 - **描述**: 确定 List 中的每个元素是否都与指定谓词定义的条件匹配
 - **参数**:
   - `match`: 定义要检查元素的条件
@@ -464,10 +464,11 @@ fruits[1] = "Grape";
 5. 对大型列表频繁操作时，考虑预先设置 Capacity 以减少重新分配
 
 ## 线程安全
-List<T> 不是线程安全的。如果多个线程需要同时访问 List<T>，必须使用锁或其他同步机制来确保线程安全。
+List\<T> 不是线程安全的。如果多个线程需要同时访问 List\<T>，必须使用锁或其他同步机制来确保线程安全。
 
 ## 最佳实践
 1. 如果知道最终大小，预先设置 Capacity 可以提高性能
-2. 对于频繁的插入/删除操作，考虑使用 LinkedList<T>
-3. 对于只读操作，考虑使用 ReadOnlyCollection<T> 包装器
+2. 对于频繁的插入/删除操作，考虑使用 LinkedList\<T>
+3. 对于只读操作，考虑使用 ReadOnlyCollection\<T> 包装器
 4. 使用 Find 系列方法代替 Where + FirstOrDefault 可以提高性能
+
