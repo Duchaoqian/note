@@ -1,7 +1,7 @@
-var leftItem = document.querySelector(".left > .item");
-      var rightItem = document.querySelector(".right > .item");
-      var leftObj = document.querySelector(".left");
-      var rightObj = document.querySelector(".right");
+var leftItem = document.querySelector(".box .left > .item");
+      var rightItem = document.querySelector(".box .right > .item");
+      var leftObj = document.querySelector(".box .left");
+      var rightObj = document.querySelector(".box .right");
       var boxItem = document.querySelector(".box");
       var l_o_x =
         leftItem.offsetLeft + leftObj.offsetLeft + boxItem.offsetLeft + 15;
