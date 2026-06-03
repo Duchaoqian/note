@@ -3,6 +3,7 @@ import type { Config as ThemeConfig } from "@vue/theme";
 import baseConfig from "@vue/theme/config";
 import { makedir } from "./pathConfig";
 import path from "path";
+import { text } from "stream/consumers";
 let vuedir = makedir(path.join(__dirname, "../note/vue"), "/note/vue/");
 
 let option = {
@@ -50,10 +51,19 @@ let option = {
     nav: [
       {
         text: "cSharp基础",
-        items: [{ text: "基础语法", link: "/csharp/base/" }, {
-          text: "常用内置类",
-          link: "/csharp/内置类/",
-        }],
+        items: [
+          {
+            text: "笔记",
+            items:[
+              { text: "基础语法", link: "/csharp/base/" },
+              { text: "高级语法", link: "/csharp/advanced/" },
+            ]
+          },
+          {
+            text: "常用内置类",
+            link: "/csharp/内置类/",
+          }
+      ],
       },
       {
         text: "前端",
@@ -438,9 +448,17 @@ let option = {
       ],
       "/csharp/base/": [
         {
-          text: "cSharp基础",
+          text: "cSharp基础语法",
           items: [
             ...makedir(path.join(__dirname, "../csharp/base"), "/csharp/base/"),
+          ],
+        },
+      ],
+      "/csharp/advanced/": [
+        {
+          text: "cSharp高级语法",
+          items: [
+            ...makedir(path.join(__dirname, "../csharp/advanced"), "/csharp/advanced/"),
           ],
         },
       ],
